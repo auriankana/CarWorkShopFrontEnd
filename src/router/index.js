@@ -1,25 +1,32 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import HomeView from '../views/HomeView.vue'
-import ListeDesEtudiant from '@/components/etudiants/ListeDesEtudiant.vue'
-import ProfileEtudiant from '@/components/etudiants/ProfileEtudiant.vue'
-import AjoutEtudiant from '@/components/etudiants/AjoutUtilisateur.vue'
+import ListeDesUtilisateurs from '@/components/utilisateurs/ListeDesUtilisateurs.vue'
+import AjoutUtilisateur from '@/components/utilisateurs/AjoutUtilisateur.vue'
+import ProfileUtilisateurs from '@/components/utilisateurs/ProfileUtilisateurs.vue'
+import Login from '@/components/authentification/Login.vue'
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
     {
       path: '/',
       name: 'home',
-      component: ListeDesEtudiant
+      component: ListeDesUtilisateurs
     },
+
     {
       path: '/profile/:id',
       name: 'profile',
-      component: ProfileEtudiant
+      component: ProfileUtilisateurs
     },
     {
-      path: '/ajout-etudiant',
-      name: 'ajout-etudiant',
-      component: AjoutEtudiant
+      path: '/AjoutUtilisateur',
+      name: 'ajoutUtilisateur',
+      component: AjoutUtilisateur
+    },
+    {
+      path: '/login',
+      name: 'login',
+      component: Login
     },
     {
       path: '/about',
